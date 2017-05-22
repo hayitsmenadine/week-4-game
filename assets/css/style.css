@@ -1,3 +1,7 @@
+body {
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/4a/06/52/4a065201509c0fc50e7341ce04cf7902.jpg");
+}
+
 h1 {
 	background-color: orange;
 	color: white;
@@ -5,22 +9,32 @@ h1 {
 }
 
 .main {
-	background-color: blue;
-	color: white;
+	background-color: #66ffff;
+	color: #1a8cff;
 	padding: 30px;
 	font-size: 16px;
 }
 #compScore {
-	background-color: purple;
+	background-color: #dd99ff;
 	color:white;
 	height: 150px;
 	text-align: center;
+	font-size: 30px;
 
+}
+#scores {
+	background-color: #99ffd6;
+	color: white;
+	height: 150px;
+}
+#total {
+	background-color: #ff8080;
+	margin-bottom: 20px;
 }
 #results {
 	padding: 20px;
 	height:150px;
 	width: 50%;
-	background-color: black;
+	background-color: #ff8080;
 	color: white;
 }

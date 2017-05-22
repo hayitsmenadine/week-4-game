@@ -1,28 +1,33 @@
-var randomCompNum = [];
-var winner = 0;
-var loser = 0;
-var userScore = 0;
 
-function getRandomInt (min, max) {
-	return Math.floor(Math.random() *(max - min +1)) + min;
-	
+$(document).ready(function () {
+
+	var winner = 0;
+	var loser = 0;
+	var userScore = 0;
+
+	function getRandomInt (min, max) {
+	return Math.floor(Math.random() *(max - min +1)) + min;	
 }
-
-
-function playGame() {
-	randomCompNum = getRandomInt (15, 75);
-	$("#compScore").text(randomCompNum);
-
+	var randomCompNum = getRandomInt (15, 75);
+	$("#compScore").append(randomCompNum);
 	
-	
+
+	function check() {
 	if(userScore === randomCompNum) {
 		winner++;
-		$("#win").text(winner);
-		$("#scores").text("You win! Congrats!");
+		$("#win").append(winner);
+		alert("You win! Congrats!");
+		userScore=0;
+		
+
 	} else if (userScore > randomCompNum){
 		loser++;
-		$("#lose").text("You lose! Beter luck next time!")
+		$("#lose").append(loser);
+		alert("You lose! Better luck next time!");
+		userScore = 0;
+		
 	}
+};
 
 
 
@@ -30,33 +35,41 @@ $("#bluecrystal").on("click", function() {
 	// alert("clicked!");
 	var randNumOne = getRandomInt(0, 9);
 	// alert(randNumOne);
-	$("#results").append("<div>" + randNumOne + "<div>");
+	userScore += randNumOne;
+	$("#results").html(userScore);
+	check();
 });
 
 $("#rosecrystal").on("click", function() {
 	// alert("clicked!");
 	var randNumTwo = getRandomInt(0, 9);
-	$("#results").append("<div>" +randNumTwo + "<div>");
+	userScore += randNumTwo;
+	$("#results").html(userScore);
+		check();
 	// alert(randNumTwo);
 });
 
 $("#emeraldcrystal").on("click", function () {
 	// alert("clicked!");
 	var randNumThree = getRandomInt (0, 9);
-	$("#results").append("<div>" +randNumThree + "<div>");
+	userScore += randNumThree;
+	$("#results").html(userScore);
+	check();
 	// alert(randNumThree);
 });
 
 $("#purplecrystal").on("click", function() {
 	// alert("clicked!");
 	var randNumFour = getRandomInt(0, 9);
-	$("#results").append("<div>" +randNumFour + "<div>");
+	userScore += randNumFour;
+	$("#results").html(userScore);
+	check();
 	// alert(randNumFour);
 });
 
-};
+});
 
-playGame();
+
 
 
 

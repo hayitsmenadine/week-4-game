@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-
+	
 	var winner = 0;
 	var loser = 0;
 	var userScore = 0;
@@ -9,7 +9,7 @@ $(document).ready(function () {
 	return Math.floor(Math.random() *(max - min +1)) + min;	
 }
 	var randomCompNum = getRandomInt (15, 75);
-	$("#compScore").append(randomCompNum);
+	$("#compScore").html(randomCompNum);
 	
 
 	function check() {
@@ -18,14 +18,16 @@ $(document).ready(function () {
 		$("#win").append(winner);
 		alert("You win! Congrats!");
 		userScore=0;
-		
+		// randomCompNum = getRandomInt(15, 75);
+		$("compScore").html(randomCompNum);
 
 	} else if (userScore > randomCompNum){
 		loser++;
 		$("#lose").append(loser);
 		alert("You lose! Better luck next time!");
 		userScore = 0;
-		
+		// randomCompNum = getRandomInt(15,75);
+		$("compScore").html(randomCompNum);
 	}
 };
 
